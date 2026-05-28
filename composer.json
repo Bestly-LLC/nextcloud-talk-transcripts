@@ -1,0 +1,45 @@
+{
+	"name": "bestlytech/talk_transcripts",
+	"description": "Automatic transcription and summarization for Nextcloud Talk recordings.",
+	"type": "project",
+	"license": "AGPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Bestly LLC",
+			"email": "hello@bestly.tech",
+			"homepage": "https://bestly.tech"
+		}
+	],
+	"require": {
+		"php": ">=8.1"
+	},
+	"require-dev": {
+		"nextcloud/coding-standard": "^1.2",
+		"phpunit/phpunit": "^10.0",
+		"phpstan/phpstan": "^1.10"
+	},
+	"autoload": {
+		"psr-4": {
+			"OCA\\TalkTranscripts\\": "lib/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OCA\\TalkTranscripts\\Tests\\": "tests/"
+		}
+	},
+	"scripts": {
+		"cs:check": "php-cs-fixer fix --dry-run --diff",
+		"cs:fix": "php-cs-fixer fix",
+		"lint": "find . -name '*.php' -not -path './vendor/*' -print0 | xargs -0 -n1 php -l",
+		"test": "phpunit --colors=always tests",
+		"psalm": "psalm --no-cache"
+	},
+	"config": {
+		"sort-packages": true,
+		"optimize-autoloader": true,
+		"platform": {
+			"php": "8.1"
+		}
+	}
+}

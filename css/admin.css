@@ -1,0 +1,46 @@
+/* Talk Transcripts — admin settings styling.
+ * Stays inside Nextcloud's native form conventions; just enough to make
+ * the multi-fieldset form scannable.
+ */
+
+.talk-transcripts-admin fieldset {
+	margin: 1.2em 0;
+	padding: 0.8em 1em 0.4em;
+	border: 1px solid var(--color-border, #e0e0e0);
+	border-radius: var(--border-radius-large, 6px);
+	background: var(--color-background-hover, #f5f5f5);
+}
+
+.talk-transcripts-admin fieldset legend {
+	padding: 0 0.4em;
+	font-weight: 600;
+	color: var(--color-main-text);
+}
+
+.talk-transcripts-admin label {
+	display: inline-block;
+	margin-top: 0.4em;
+	color: var(--color-text-maxcontrast, var(--color-main-text));
+}
+
+.talk-transcripts-admin .settings-hint {
+	color: var(--color-text-maxcontrast, #6b6b6b);
+	font-size: 0.85em;
+	font-style: italic;
+}
+
+.talk-transcripts-admin .msg.success {
+	color: var(--color-success, #46ba61);
+}
+
+.talk-transcripts-admin .msg.error {
+	color: var(--color-error, #e9322d);
+}
+
+.talk-transcripts-admin textarea {
+	background: var(--color-main-background);
+	color: var(--color-main-text);
+	border: 1px solid var(--color-border-dark, #c0c0c0);
+	border-radius: var(--border-radius, 3px);
+	padding: 0.4em;
+}

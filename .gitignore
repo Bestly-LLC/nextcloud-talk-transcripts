@@ -1,0 +1,21 @@
+# Composer
+/vendor/
+composer.lock
+
+# Build
+/build/
+*.tar.gz
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# PHPUnit
+.phpunit.result.cache
+/coverage/
+
+# PHPStan
+/.phpstan/

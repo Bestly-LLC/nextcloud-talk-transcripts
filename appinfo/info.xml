@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+	<id>talk_transcripts</id>
+	<name>Talk Transcripts</name>
+	<summary>Automatic transcription and summarization for Nextcloud Talk recordings</summary>
+	<description><![CDATA[
+**Auto-transcribe every Talk recording.**
+
+When a Nextcloud Talk call recording finishes and lands in the user's Files, this app picks it up, sends the audio to a Whisper-compatible transcription service, writes the transcript as a Markdown file alongside the recording, and (optionally) generates a one-page summary with action items via an LLM.
+
+**Works with any OpenAI-compatible API:**
+
+- OpenAI Whisper (whisper-1) for transcription
+- OpenAI Chat Completions (gpt-4o-mini, gpt-4o) for summaries
+- Anthropic Messages API (Claude) for summaries
+- Self-hosted endpoints (faster-whisper-server, Ollama, LM Studio) — anything OpenAI-compatible
+
+**Privacy-first:** all credentials live in your Nextcloud's config. No data flows through any third party other than the AI provider you configure. If you point it at a self-hosted Whisper + Ollama, nothing leaves your server.
+
+Built by Bestly LLC. Released under AGPLv3.
+	]]></description>
+	<version>0.1.0</version>
+	<licence>agpl</licence>
+	<author mail="hello@bestly.tech" homepage="https://bestly.tech">Bestly LLC</author>
+	<namespace>TalkTranscripts</namespace>
+	<category>integration</category>
+	<category>tools</category>
+	<website>https://github.com/bestlytech/nextcloud-talk-transcripts</website>
+	<bugs>https://github.com/bestlytech/nextcloud-talk-transcripts/issues</bugs>
+	<repository type="git">https://github.com/bestlytech/nextcloud-talk-transcripts.git</repository>
+	<screenshot>https://raw.githubusercontent.com/bestlytech/nextcloud-talk-transcripts/main/screenshots/admin.png</screenshot>
+	<dependencies>
+		<php min-version="8.1"/>
+		<nextcloud min-version="28" max-version="31"/>
+	</dependencies>
+	<background-jobs>
+		<job>OCA\TalkTranscripts\BackgroundJob\ProcessRecordingJob</job>
+	</background-jobs>
+	<settings>
+		<admin>OCA\TalkTranscripts\Settings\Admin</admin>
+		<admin-section>OCA\TalkTranscripts\Settings\AdminSection</admin-section>
+	</settings>
+</info>
